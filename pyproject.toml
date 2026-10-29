@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "remote-deployer"
+version = "1.0.0"
+description = "Полуавтоматический инструмент удалённого развёртывания доступа"
+requires-python = ">=3.10"
+dependencies = [
+    "pywinrm>=0.4.3",
+    "paramiko>=3.4.0",
+    "requests>=2.31.0",
+    "pyyaml>=6.0.1",
+]
+
+[project.scripts]
+remote-deployer = "remote_deployer:main"
+
+[tool.setuptools]
+packages = ["remote_deployer"]
+package-dir = { remote_deployer = "src" }
